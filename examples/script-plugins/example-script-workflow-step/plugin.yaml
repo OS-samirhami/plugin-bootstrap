@@ -1,0 +1,65 @@
+name: Example Script Workflow Step
+rundeckPluginVersion: 2.0
+author: Rundeck Dev
+description: Describe your plugin here
+rundeckCompatibilityVersion: 3.x
+targetHostCompatibility: unix
+license: Apache 2.0
+tags:
+    - script
+    - WorkflowNodeStep
+date: 2026-02-03T23:15:54.018721Z
+version: 1.0.0
+providers:
+    - name: example-script-workflow-step
+      service: WorkflowNodeStep
+      title: Example Script Workflow Step
+      description: The description of example-script-workflow-step plugin
+      plugin-type: script
+      script-interpreter: /bin/bash
+      script-file: exec
+      config:
+        - type: String
+          name: example
+          title: 'Example String'
+          description: 'Example String'
+          required: true
+        - type: String
+          name: multilineexample
+          title: 'Multi-line Example String'
+          description: 'Multi-line Example String'
+          renderingOptions:
+            displayType: MULTI_LINE
+        - type: Select
+          name: exampleSelect
+          title: ExampleSelect
+          description: 'Example Select'
+          default: Beige
+          values:
+            - Blue
+            - Beige
+            - Black
+        - type: Boolean
+          name: debug
+          title: Debug?
+          description: 'Write debug messages to stderr'
+          renderingOptions:
+            groupName: 'Config'
+        - type: String
+          name: storageprivatekey
+          title: Storage Private Key
+          description: Access to storage private key example
+          renderingOptions:
+            selectionAccessor: "STORAGE_PATH"
+            valueConversion: "STORAGE_PATH_AUTOMATIC_READ"
+            storage-path-root: "keys"
+            storage-file-meta-filter: "Rundeck-key-type=private"
+        - type: String
+          name: storagepassword
+          title: Storage Password
+          description: Access to storage password example
+          renderingOptions:
+            selectionAccessor: "STORAGE_PATH"
+            valueConversion: "STORAGE_PATH_AUTOMATIC_READ"
+            storage-path-root: "keys"
+            storage-file-meta-filter: "Rundeck-data-type=password"

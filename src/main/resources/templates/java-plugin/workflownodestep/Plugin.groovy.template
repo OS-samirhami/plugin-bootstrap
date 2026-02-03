@@ -154,7 +154,7 @@ By default, it will be collapsed in the list of properties, thanks to the '@Rend
 
         /**
         * Next, we'll resolve the API token itself. There's a perfect function for this in the Util class,
-        * getPasswordFromKeyStorage. YOu can see more about how the process works in the Util file.
+        * getPasswordFromKeyStorage. You can see more about how the process works in the Util file.
         */
         try {
             userApiKey = Util.getPasswordFromKeyStorage(apiKeyPath, context)

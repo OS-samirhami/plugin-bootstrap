@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eu
+
+#Your script here
+
+if [[ "true" == "$RD_CONFIG_DEBUG" ]] ; then
+    # WARNING: Never log all RD_CONFIG_* variables as they may contain secrets from Key Storage
+    # Only log specific non-sensitive configuration values needed for debugging
+    echo "Debug mode enabled"
+    echo "Plugin: example-script-workflow-step"
+fi
+
+echo "running example-script-workflow-step"
+echo "Example Config: $RD_CONFIG_EXAMPLE"
+echo "Example Multi-Line Config: $RD_CONFIG_MULTILINEEXAMPLE"
+echo "Example Select Config: $RD_CONFIG_EXAMPLESELECT"

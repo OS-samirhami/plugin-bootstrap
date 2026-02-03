@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+plugins {
+    id 'pl.allegro.tech.build.axion-release' version '1.7.0'
+}
+
+ext.pluginName = 'Example Script Option'
+ext.pluginDescription = "Provide a short description of your plugin here"
+ext.sopsCopyright = "© 2018, Rundeck, Inc."
+ext.sopsUrl = "http://rundeck.com"
+ext.buildDateString=new Date().format("yyyy-MM-dd'T'HH:mm:ssX")
+ext.archivesBaseName = "example-script-option"
+ext.pluginBaseFolder = "."
+
+project.version = "0.1.0-SNAPSHOT"
+ext.archiveFilename = ext.archivesBaseName + '-' + version
+
+// NOTE: Uses gradle-5.6 branch for stability. For production use, consider:
+// 1. Copying the script into your repository, OR
+// 2. Pinning to a specific commit hash
+apply from: 'https://raw.githubusercontent.com/rundeck-plugins/build-zip/gradle-5.6/build.gradle'

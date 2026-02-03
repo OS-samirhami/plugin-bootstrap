@@ -1,0 +1,35 @@
+package com.plugin.exampleorchestrator;
+
+import com.dtolabs.rundeck.core.common.INodeEntry;
+import com.dtolabs.rundeck.core.execution.workflow.StepExecutionContext;
+import com.dtolabs.rundeck.core.plugins.Plugin;
+import com.dtolabs.rundeck.plugins.ServiceNameConstants;
+import com.dtolabs.rundeck.plugins.descriptions.PluginDescription;
+import com.dtolabs.rundeck.plugins.descriptions.PluginProperty;
+import com.dtolabs.rundeck.plugins.orchestrator.Orchestrator;
+import com.dtolabs.rundeck.plugins.orchestrator.OrchestratorPlugin;
+
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+
+@Plugin(service=ServiceNameConstants.Orchestrator,name="example-orchestrator")
+@PluginDescription(title="Example Orchestrator", description="My Orchestrator plugin description")
+public class ExampleOrchestrator implements OrchestratorPlugin{
+
+   @PluginProperty(title = "Count", description = "Number of nodes to select from the pool", defaultValue = "1")
+       protected int count;
+
+   @Override
+   public Orchestrator createOrchestrator(StepExecutionContext context, Collection<INodeEntry> nodes) {
+       return new ExampleOrchestratorOrchestrator(count, context, nodes);
+   }
+
+
+}

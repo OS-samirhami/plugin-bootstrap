@@ -18,6 +18,6 @@ package com.rundeck.plugin.utils
 
 class GeneratorUtils {
     static String sanitizedPluginName(final String pluginName) {
-        return pluginName.replace(" ", "-").replaceAll("[^a-zA-Z\\-]","").toLowerCase()
+        return pluginName.replace(" ", "-").replaceAll("[^a-zA-Z0-9\\-]","").toLowerCase()
     }
 }

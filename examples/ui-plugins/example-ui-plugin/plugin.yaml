@@ -1,0 +1,25 @@
+name: Example UI Plugin
+rundeckPluginVersion: 2.0
+author: Rundeck Dev
+description: Describe your plugin here
+rundeckCompatibilityVersion: 3.x
+targetHostCompatibility: unix
+license: Apache 2.0
+tags:
+    - script
+    - UI
+date: 2026-02-03T23:15:56.135349Z
+version: 1.0.0
+providers:
+    - name: example-ui-plugin
+      service: UI
+      plugin-type: ui
+      title: Example UI Plugin
+      description: The description of your plugin
+      ui:
+        - pages: '*'
+          scripts:
+            - js/example-ui-plugin-init.js
+            - js/main.js
+          styles:
+            - css/example-ui-plugin-styles.css
