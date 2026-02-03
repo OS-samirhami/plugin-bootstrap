@@ -38,7 +38,7 @@ repositories {
 scmVersion {
     ignoreUncommittedChanges = false
     tag {
-        prefix = ''
+        prefix = 'v'
         versionSeparator = ''
     }
 }
