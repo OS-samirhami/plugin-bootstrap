@@ -26,11 +26,8 @@ jobs:
     - name: Validate Gradle wrapper
       uses: gradle/wrapper-validation-action@v2
         
-    - name: Build with Gradle
-      run: ./gradlew clean build
-      
-    - name: Build distribution packages
-      run: ./gradlew buildRpm buildDeb shadowDistZip shadowDistTar
+    - name: Build all distribution packages
+      run: ./gradlew clean build buildRpm buildDeb shadowDistZip shadowDistTar
       
     - name: Get version from tag
       id: get_version
@@ -44,11 +41,11 @@ jobs:
         prerelease: false
         generate_release_notes: true
         files: |
-          build/distributions/rundeck-plugin-bootstrap-*.tar
-          build/distributions/rundeck-plugin-bootstrap-*.zip
-          build/distributions/rundeck-plugin-bootstrap-shadow-*.tar
-          build/distributions/rundeck-plugin-bootstrap-shadow-*.zip
-          build/distributions/rundeck-plugin-bootstrap_*_all.deb
-          build/distributions/rundeck-plugin-bootstrap-*.noarch.rpm
+          build/distributions/rundeck-plugin-bootstrap-${{ steps.get_version.outputs.VERSION }}.tar
+          build/distributions/rundeck-plugin-bootstrap-${{ steps.get_version.outputs.VERSION }}.zip
+          build/distributions/rundeck-plugin-bootstrap-shadow-${{ steps.get_version.outputs.VERSION }}.tar
+          build/distributions/rundeck-plugin-bootstrap-shadow-${{ steps.get_version.outputs.VERSION }}.zip
+          build/distributions/rundeck-plugin-bootstrap_${{ steps.get_version.outputs.VERSION }}-1_all.deb
+          build/distributions/rundeck-plugin-bootstrap-${{ steps.get_version.outputs.VERSION }}-1.noarch.rpm
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
