@@ -4,7 +4,10 @@ set -eu
 #Your script here
 
 if [[ "true" == "\$RD_CONFIG_DEBUG" ]] ; then
-    env | grep RD_CONFIG
+    # WARNING: Never log all RD_CONFIG_* variables as they may contain secrets from Key Storage
+    # Only log specific non-sensitive configuration values needed for debugging
+    echo "Debug mode enabled"
+    echo "Plugin: ${sanitizedPluginName}"
 fi
 
 echo "running ${sanitizedPluginName}"

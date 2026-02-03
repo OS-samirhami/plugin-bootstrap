@@ -151,7 +151,7 @@ Want to learn more about the Rundeck API? Check out [our docs](https://docs.rund
 
         /**
         * Next, we'll resolve the API token itself. There's a perfect function for this in the Util class,
-        * getPasswordFromKeyStorage. YOu can see more about how the process works in the Util file.
+        * getPasswordFromKeyStorage. You can see more about how the process works in the Util file.
         */
         try {
             userApiKey = Util.getPasswordFromKeyStorage(apiKeyPath, context)

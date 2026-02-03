@@ -66,7 +66,9 @@ public class ExampleNotification implements NotificationPlugin, AcceptsServices 
         //Pass in config properties to the API so that secret can be used in api call
         ExampleApis api = new ExampleApis(config as Properties);
 
-        logger.warn(api.post(apiKey))
+        // Send notification - NOTE: Never log full API responses as they may contain sensitive data
+        def response = api.post(apiKey)
+        logger.info("Notification sent successfully")
 
         return true;
     }

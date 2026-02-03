@@ -9,8 +9,8 @@ DESTINATION="$*"
 
 #do a dry run
 if [[ "true" == "$RD_CONFIG_DRY_RUN" ]] ; then
-    env | grep RD_CONFIG
-    echo "Coping  file from $SOURCE to  $HOST: $DESTINATION "
+    # WARNING: Never log all RD_CONFIG_* variables as they may contain secrets from Key Storage
+    echo "Dry run mode - copying file from $SOURCE to $HOST: $DESTINATION"
     exit 0
 
 fi

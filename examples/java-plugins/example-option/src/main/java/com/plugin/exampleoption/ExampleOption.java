@@ -58,7 +58,7 @@ public class ExampleOption implements OptionValuesPlugin, Describable{
        return options;
    }
 
-   class StandardOptionValue implements OptionValue {
+   static class StandardOptionValue implements OptionValue {
 
        private String name;
        private String value;

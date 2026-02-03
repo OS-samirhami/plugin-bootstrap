@@ -13,14 +13,11 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Plugin(service=ServiceNameConstants.Orchestrator,name="example-orchestrator")
 @PluginDescription(title="Example Orchestrator", description="My Orchestrator plugin description")

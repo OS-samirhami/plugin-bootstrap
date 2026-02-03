@@ -18,4 +18,7 @@ ext.pluginBaseFolder = "."
 project.version = "0.1.0-SNAPSHOT"
 ext.archiveFilename = ext.archivesBaseName + '-' + version
 
+// WARNING: This loads build logic from a remote URL. For production use, consider:
+// 1. Copying the script into your repository, OR
+// 2. Pinning to a specific commit hash instead of 'master'
 apply from: 'https://raw.githubusercontent.com/rundeck-plugins/build-zip/master/build.gradle'
