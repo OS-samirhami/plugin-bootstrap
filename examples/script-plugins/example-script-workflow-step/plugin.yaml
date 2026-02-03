@@ -8,7 +8,7 @@ license: Apache 2.0
 tags:
     - script
     - WorkflowNodeStep
-date: 2026-02-03T22:50:08.910219Z
+date: 2026-02-03T23:15:54.018721Z
 version: 1.0.0
 providers:
     - name: example-script-workflow-step

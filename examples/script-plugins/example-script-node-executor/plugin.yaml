@@ -8,7 +8,7 @@ license: Apache 2.0
 tags:
     - script
     - NodeExecutor
-date: 2026-02-03T22:50:08.344368Z
+date: 2026-02-03T23:15:53.480885Z
 version: 1.0.0
 providers:
     - name: example-script-node-executor

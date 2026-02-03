@@ -8,7 +8,7 @@ license: Apache 2.0
 tags:
     - script
     - ResourceModelSource
-date: 2026-02-03T22:50:09.472848Z
+date: 2026-02-03T23:15:54.549683Z
 version: 1.0.0
 providers:
     - name: example-script-resource-model
