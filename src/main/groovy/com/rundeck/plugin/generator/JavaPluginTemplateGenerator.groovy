@@ -35,8 +35,8 @@ class JavaPluginTemplateGenerator extends AbstractTemplateGenerator {
         templateProperties["providedService"] = providedService
         templateProperties["currentDate"] = Instant.now().toString()
         templateProperties["pluginLang"] = "java"
-        templateProperties["rundeckVersion"] = "5.0.2-20240212"
-        templateProperties["groovyVersion"] = "3.0.9"
+        templateProperties["rundeckVersion"] = "5.7.0-20250101"
+        templateProperties["groovyVersion"] = "3.0.21"
         templateProperties["apiKeyPath"] = "\${apiKeyPath}"
         templateProperties["data"] = "\${data}"
         templateProperties["resourceInfo"] = "resourceInfo"

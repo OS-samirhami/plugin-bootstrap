@@ -1,0 +1,3 @@
+# Example Workflow Node Step Rundeck Plugin
+
+This is a template node step plugin that was build using the [rundeck-plugin-bootstrap](https://github.com/rundeck/plugin-bootstrap)

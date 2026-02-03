@@ -27,15 +27,21 @@ import java.util.concurrent.Callable
  */
 
 @Command(description = "Create a Rundeck plugin artifact.",
-        name = "plugin-bootstrap", mixinStandardHelpOptions = true, version = "1.1")
-class Generator implements Callable<Void>{
+        name = "plugin-bootstrap", mixinStandardHelpOptions = true, version = "1.2")
+class Generator implements Callable<Integer>{
 
     static void main(String[] args) throws Exception {
+        int exitCode = 0
         try{
-            CommandLine.call(new Generator(), args)
+            exitCode = new CommandLine(new Generator()).execute(args)
         }catch(Exception e){
-            println(e.getMessage())
+            System.err.println("Error: ${e.getMessage()}")
+            if (System.getProperty("debug") != null) {
+                e.printStackTrace(System.err)
+            }
+            exitCode = 1
         }
+        System.exit(exitCode)
     }
 
     @Option(names = [ "-n", "--pluginName" ], description = "Plugin Name." , required = true)
@@ -48,7 +54,7 @@ class Generator implements Callable<Void>{
     String destinationDirectory
 
     @Override
-    Void call() throws Exception {
+    Integer call() throws Exception {
         FilesystemArtifactTemplateGenerator generator = new FilesystemArtifactTemplateGenerator()
 
         println generator.generate(this.pluginName,
@@ -56,6 +62,6 @@ class Generator implements Callable<Void>{
                 this.serviceType.toString(),
                 this.destinationDirectory)
 
-        return null
+        return 0
     }
 }

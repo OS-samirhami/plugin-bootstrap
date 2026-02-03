@@ -1,0 +1,14 @@
+# Build artifacts in examples should be ignored
+*/*/build/
+*/*/out/
+*/*/.gradle/
+*/*/*.jar
+*/*/*.zip
+*/*/*.tar
+*/*/*.rpm
+*/*/*.deb
+
+# IDE files
+*/*/.idea/
+*/*/*.iml
+*/*/.DS_Store

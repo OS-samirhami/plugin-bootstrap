@@ -1,0 +1,30 @@
+name: Example Script Option
+rundeckPluginVersion: 2.0
+author: Rundeck Dev
+description: Describe your plugin here
+rundeckCompatibilityVersion: 3.x
+targetHostCompatibility: unix
+license: Apache 2.0
+tags:
+    - option
+    - Option
+date: 2026-02-03T22:11:09.380738Z
+version: 1.0.0
+providers:
+    - name: example-script-option
+      service: OptionValues
+      title: Example Script Option
+      description: The description of example-script-option plugin
+      plugin-type: script
+      script-interpreter: /bin/bash
+      script-file: option
+      config:
+        - type: String
+          name: example
+          title: 'Example String'
+          description: 'Example String'
+          required: false
+        - type: Boolean
+          name: debug
+          title: Debug?
+          description: 'Write debug messages to stderr'

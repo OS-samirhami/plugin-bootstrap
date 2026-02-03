@@ -1,7 +1,6 @@
 package com.plugin.${javaPluginClass.toLowerCase()}
 
 import spock.lang.Specification
-import spock.lang.Specification
 import org.rundeck.app.spi.Services
 import org.rundeck.storage.api.Resource
 import com.dtolabs.rundeck.core.storage.ResourceMeta
