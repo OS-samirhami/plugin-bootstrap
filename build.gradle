@@ -1,9 +1,9 @@
 plugins {
     id 'groovy'
     id 'application'
-    id "nebula.ospackage" version "9.1.1"
+    id "com.netflix.nebula.ospackage" version "11.11.2"
     id 'pl.allegro.tech.build.axion-release' version '1.18.2'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 
 }
 
@@ -11,7 +11,6 @@ apply plugin: 'idea'
 apply plugin: 'groovy'
 apply plugin: 'application'
 apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'nebula.ospackage'
 
 mainClassName = 'com.rundeck.plugin.Generator'
 applicationName = 'rundeck-plugin-bootstrap'
