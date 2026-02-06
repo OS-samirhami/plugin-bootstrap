@@ -1,0 +1,52 @@
+# Plugin metadata (for documentation - Java plugins use manifest attributes)
+name: Conditional Job Trigger
+version: 0.1.0
+rundeckPluginVersion: 2.0
+author: Rundeck Plugin Bootstrap
+date: 2026-02-05
+url: https://github.com/rundeck/plugin-bootstrap
+providers:
+  - name: conditional-job-trigger
+    service: WorkflowStep
+    title: Conditional Job Trigger
+    description: |
+      Conditionally trigger a Rundeck job based on a boolean expression.
+      Uses Rundeck's internal ExecutionService to respect auth context.
+    
+    plugin-type: script
+    script-interpreter: /bin/bash
+    
+    config:
+      - name: targetJobId
+        title: Target Job ID
+        type: String
+        required: true
+        description: |
+          The UUID or name of the job to trigger.
+          Examples: 'abc123-def456' or 'my-job-name'
+      
+      - name: conditionExpression
+        title: Condition Expression
+        type: String
+        required: true
+        default: 'true'
+        description: |
+          Boolean expression to evaluate. Job triggers only if true.
+          Supports variable interpolation: ${option.deploy} == 'true'
+      
+      - name: waitForCompletion
+        title: Wait for Completion
+        type: Boolean
+        required: false
+        default: 'true'
+        description: |
+          If true, wait for triggered job to complete.
+          If false, trigger and continue immediately.
+      
+      - name: failOnTargetFailure
+        title: Fail on Target Job Failure
+        type: Boolean
+        required: false
+        default: 'false'
+        description: |
+          If waiting for completion, fail this step if target job fails.
