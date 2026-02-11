@@ -12,7 +12,7 @@ This directory contains automated CI/CD workflows for the plugin-bootstrap proje
 
 **What it does:**
 1. Checks out the code
-2. Sets up JDK 11 (Temurin distribution)
+2. Sets up JDK 17 (Temurin distribution)
 3. Validates the Gradle wrapper for security
 4. Runs `./gradlew clean build check` (compiles, runs tests)
 5. Builds distribution packages (`.deb` and `.rpm`)
@@ -62,7 +62,7 @@ The release workflow will automatically:
 - Build all packages
 - Create the GitHub release
 - Upload distribution files
-- Make them available at: https://github.com/rundeck/plugin-bootstrap/releases
+- Make them available at: https://github.com/OS-samirhami/plugin-bootstrap/releases
 
 ## Permissions
 
@@ -87,10 +87,10 @@ Check for updates: https://github.com/marketplace?type=actions
 
 ### Java Version
 
-The project uses Java 11 as the minimum version. This is set in:
-- Both workflow files
-- `build.gradle` (`sourceCompatibility = 11.0`)
-- Generated plugin templates
+The project uses Java 17 as the build version. The compatibility settings may vary:
+- Both workflow files use JDK 17
+- `build.gradle` may specify different source/target compatibility
+- Generated plugin templates should be compatible with Rundeck's Java requirements
 
 ### Distribution Packages
 

@@ -6,3 +6,5 @@ build/
 *.iml
 .DS_Store
 temp/
+.vscode/
+LAMBDA-FUNCTION-ANALYSIS.md
